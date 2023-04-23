@@ -110,7 +110,7 @@ controlactivity.update_layout(
     xaxis_linecolor = 'Black',
     yaxis_linecolor = 'Black',
     xaxis_categoryorder = "category ascending",
-    yaxis_title='Number'
+    yaxis_title='Number',
 )
 
 de_oe = go.Figure()
