@@ -190,6 +190,7 @@ def import_data(data):
 def sanity_check():
 
     # Load our RACA spreadsheets
+    y2020raca = pd.read_excel('C:/Data/raca_data/raca2020.xlsx')
     # 2021 RACA
     y2021raca = pd.read_excel('C:/Data/raca_data/raca2021.xlsx')
 
@@ -197,6 +198,7 @@ def sanity_check():
     y2022raca = pd.read_excel('C:/Data/raca_data/raca2022.xlsx')
 
     # Read in our data
+    y2021raca = import_data(y2021raca)
     y2021raca = import_data(y2021raca)
     y2022raca = import_data(y2022raca)
 
@@ -231,7 +233,8 @@ def sanity_check():
     ca = y2022raca['control_activity']
     cb = y2021raca['control_activity']
 
-    return a_processes, a_risk, a_control, a_action, b_processes, b_risk, b_control, b_action, ca, cb
+    return y2020raca, y2021raca, y2022raca, a_processes, a_risk, a_control, a_action, b_processes, b_risk, \
+        b_control, b_action, ca, cb
 
 
     controla = ca.value_counts()
