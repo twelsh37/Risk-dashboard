@@ -4,15 +4,15 @@ body {
 
 #stats{
     height: 200px;
-    border: #9C1A1C 1px solid;
+    border: #030303 0.5px solid;
 }
 
 #control1{
     height: 400px;
-    border: #0cff41 1px solid;
+    border: #030303 0.5px solid;
 }
 
 #control2{
     height: 400px;
-    border: #3311ef 1px solid;
+    border: #030303 0.5px solid;
 }
