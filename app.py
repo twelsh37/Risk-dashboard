@@ -135,7 +135,7 @@ de_oe.update_layout(
 )
 
 sun = px.sunburst(
-    data_frame=y2020raca,
+    data_frame=y2022raca,
     # Lays out the sunburst from our L1, to L2, to level 3 risk categories
     path=['risk_types', 'risk', 'level3'],
     color_continuous_scale=px.colors.sequential.BuGn,
