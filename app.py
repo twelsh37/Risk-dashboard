@@ -23,7 +23,7 @@ controlb = cb.value_counts()
 # Dash App below
 #------------------------------------------------------------------------------
 # Set Dash app title
-app = dash.Dash(__name__, title='RACA Analytics', external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(__name__, title='Risk Analytics', external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 cards = go.Figure()
 
@@ -157,7 +157,7 @@ sun.update_traces(textinfo='label+percent parent+value', insidetextorientation='
 app.layout = dbc.Container([html.Div([
     html.Br(),
     dbc.Row([
-        dbc.Col([html.H1('RACA Dashboard', style={"width": "100%"})],  width=12),
+        dbc.Col([html.H1('RISK Dashboard', style={"width": "100%"})],  width=12),
     ]),
     dbc.Row([
         dbc.Col([dcc.Graph(id='stats', figure=cards)], className='three columns', width=6),
