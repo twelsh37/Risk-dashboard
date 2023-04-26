@@ -74,94 +74,18 @@ def import_data(data):
         for value in extract:
             if value == 'DP':
                 result.append('Data Privacy')
-            elif value == 'COSECG':
-                result.append('Company Secretariat')
-            elif value == 'BI':
-                result.append('Business Inteligence')
             elif value == 'ITDEV':
                 result.append('IT Development')
-            elif value == 'GMBH':
-                result.append('GmbH')
-            elif value == 'SEC':
-                result.append('Information Security')
-            elif value == 'FR':
-                result.append('Financial Risk')
-            elif value == 'CASS':
-                result.append('Client Money')
-            elif value == 'PROD':
-                result.append('Market Data')
-            elif value == 'CSA':
-                result.append('Client Services APAC')
-            elif value == 'SDBO':
-                result.append('Stockbroking Dealing & Business Operations')
-            elif value == 'SBDC':
-                result.append('Stockbroking Business Change')
-            elif value == 'SBBC':
-                result.append('Stockbroking Operations')
-            elif value == 'SCM':
-                result.append('Stockbroking Client Money')
-            elif value == 'SOS':
-                result.append('Stockbroking Operations Scrip - APAC')
-            elif value == 'SOC':
-                result.append('Stockbroking Operations Cash - APAC')
-            elif value == 'SOT':
-                result.append('Stockbroking Operations Tax - APAC')
-            elif value == 'COSECA':
-                result.append('Company Secretariat - APAC')
-            elif value == 'SP':
-                result.append('Stockbroking Partners')
-            elif value == 'WD':
-                result.append('Stockbroking Web Development')
-            elif value == 'HR':
-                result.append('HR')
-            elif value == 'BCG':
-                result.append('Business Continuity Management')
-            elif value == 'ISP':
-                result.append('CMC Connect')
-            elif value == 'CSG':
+            elif value == 'CS':
                 result.append('Client Services')
-            elif value == 'ST':
-                result.append('Sales Trading')
-            elif value == 'TAX':
-                result.append('Tax')
-            elif value == 'FIN':
-                result.append('Finance')
-            elif value == 'FACL':
-                result.append('Facilities')
             elif value == 'ITPROD':
                 result.append('IT Production')
-            elif value == 'LEG':
-                result.append('Legal')
-            elif value == 'TRAD':
-                result.append('Trading incl. Pricing and Risk Dev')
-            elif value == 'MAR':
-                result.append('Marketing')
-            elif value == 'BO':
-                result.append('Business Operations')
-            elif value == 'OR':
-                result.append('Operational Risk')
-            elif value == 'LR':
-                result.append('Liquidity Risk')
             elif value == 'FCT':
                 result.append('Financial Crime')
-            elif value == 'BCA':
-                result.append('Business Change AUS')
-            elif value == 'BC':
-                result.append('Business Change')
-            elif value == 'COMP':
-                result.append('Compliance')
-            elif value == 'CD':
-                result.append('Corporate Development')
-            elif value == 'PRU':
-                result.append('Prudential Regulation - UK/ME')
-            elif value == 'IR':
-                result.append('Investor Relations')
-            elif value == 'TRE':
-                result.append('Treasuary')
-            elif value == 'STBM':
-                result.append('Stockbroking Marketing')
+            elif value == 'OR':
+                result.append('Operational Risk')
             else:
-                display(f"Business Unit {value} has not been added to the function yet")
+                print(f"Business Unit {value} has not been added to the function yet")
 
                 # Apply reuslts to 'business_unit' to create the column in the dataframe
         data['business_unit'] = result
@@ -190,12 +114,11 @@ def import_data(data):
 def sanity_check():
 
     # Load our RACA spreadsheets
-    y2020raca = pd.read_excel('C:/Data/raca_data/raca2020.xlsx')
+    y2020raca = pd.read_excel('data/test_2020.xlsx')
     # 2021 RACA
-    y2021raca = pd.read_excel('C:/Data/raca_data/raca2021.xlsx')
-
+    y2021raca = pd.read_excel('data/test_2021.xlsx')
     # 2022 RACA
-    y2022raca = pd.read_excel('C:/Data/raca_data/raca2022.xlsx')
+    y2022raca = pd.read_excel('data/test_2022.xlsx')
 
     # Read in our data
     y2021raca = import_data(y2021raca)
