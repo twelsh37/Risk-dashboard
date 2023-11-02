@@ -114,33 +114,33 @@ def import_data(data):
 def sanity_check():
 
     # Load our RACA spreadsheets
-    y2020raca = pd.read_excel('data/test_2020.xlsx')
+    test_2020 = pd.read_excel('data/test_2020.xlsx')
     # 2021 RACA
-    y2021raca = pd.read_excel('data/test_2021.xlsx')
+    test2021 = pd.read_excel('data/test_2021.xlsx')
     # 2022 RACA
-    y2022raca = pd.read_excel('data/test_2022.xlsx')
+    test2022 = pd.read_excel('data/test_2022.xlsx')
 
     # Read in our data
-    y2021raca = import_data(y2021raca)
-    y2021raca = import_data(y2021raca)
-    y2022raca = import_data(y2022raca)
+    y2021 = import_data(test_2020)
+    y2021 = import_data(test_2021)
+    y2022 = import_data(test_2022)
 
     # run our sanity check function on each dataframe
     # 2022
     # number of processes
-    a_processes = y2022raca['process_title'].nunique()
+    a_processes = y2022['process_title'].nunique()
 
     # number of risks
-    a_risk = y2022raca['risk_id'].nunique()
+    a_risk = y2022['risk_id'].nunique()
 
     # Number of Controls
-    a_control = y2022raca['control_id'].nunique()
+    a_control = y2022['control_id'].nunique()
 
     # Number of Actions
-    a_action = y2022raca['action_id'].nunique()
+    a_action = y2022['action_id'].nunique()
 
     # number of processes
-    b_processes = y2021raca['process_title'].nunique()
+    b_processes = y2021['process_title'].nunique()
 
     # 2021
     # number of risks
@@ -153,10 +153,10 @@ def sanity_check():
     b_action = y2021raca['action_id'].nunique()
 
     # Control Activity - for guage
-    ca = y2022raca['control_activity']
-    cb = y2021raca['control_activity']
+    ca = y2022['control_activity']
+    cb = y2021['control_activity']
 
-    return y2020raca, y2021raca, y2022raca, a_processes, a_risk, a_control, a_action, b_processes, b_risk, \
+    return y2020, y2021, y2022, a_processes, a_risk, a_control, a_action, b_processes, b_risk, \
         b_control, b_action, ca, cb
 
 
