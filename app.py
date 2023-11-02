@@ -12,7 +12,7 @@ from dataprep import sanity_check
 
 
 # Run our sanity check function on each dataframe
-y2020raca, y2021raca, y2022raca, b_process, b_risk, b_controls, b_actions, a_process, a_risk, a_controls, a_actions, ca, cb\
+risk_2020, risk_2021, risc_2022, b_process, b_risk, b_controls, b_actions, a_process, a_risk, a_controls, a_actions, ca, cb\
     = sanity_check()
 
 # get the data for our Control activity gauge
@@ -97,9 +97,9 @@ controlactivity = go.Figure()
 
 # Add the histogram traces to the figure
 for column_header in ['control_activity']:
-    controlactivity.add_trace(go.Histogram(x=y2020raca[column_header], name='2020', marker={'color': '#AA4639'}))
-    controlactivity.add_trace(go.Histogram(x=y2021raca[column_header], name='2021', marker = {'color': '#AA7139'}))
-    controlactivity.add_trace(go.Histogram(x=y2022raca[column_header], name='2022', marker = {'color': '#255C69'}))
+    controlactivity.add_trace(go.Histogram(x=risk_2020[column_header], name='2020', marker={'color': '#AA4639'}))
+    controlactivity.add_trace(go.Histogram(x=risk_2021[column_header], name='2021', marker = {'color': '#AA7139'}))
+    controlactivity.add_trace(go.Histogram(x=risk_2022[column_header], name='2022', marker = {'color': '#255C69'}))
 
 # See Plotly documentation for customizations: https://plotly.com/python/reference/histogram/
 controlactivity.update_layout(
@@ -118,9 +118,9 @@ de_oe = go.Figure()
 
 # Add the histogram traces to the figure
 for column_header in ['de_oe']:
-    de_oe.add_trace(go.Histogram(x=y2020raca[column_header], name='2020', marker = {'color': '#AA4639'}))
-    de_oe.add_trace(go.Histogram(x=y2021raca[column_header], name='2021', marker = {'color': '#AA7139'}))
-    de_oe.add_trace(go.Histogram(x=y2022raca[column_header], name='2022', marker = {'color': '#255C69'}))
+    de_oe.add_trace(go.Histogram(x=risk_2020[column_header], name='2020', marker = {'color': '#AA4639'}))
+    de_oe.add_trace(go.Histogram(x=risk_2021[column_header], name='2021', marker = {'color': '#AA7139'}))
+    de_oe.add_trace(go.Histogram(x=risk_2022[column_header], name='2022', marker = {'color': '#255C69'}))
 # Update the layout
 
 de_oe.update_layout(
@@ -135,7 +135,7 @@ de_oe.update_layout(
 )
 
 sun = px.sunburst(
-    data_frame=y2022raca,
+    data_frame=risk_2020,
     # Lays out the sunburst from our L1, to L2, to level 3 risk categories
     path=['risk_types', 'risk', 'level3'],
     color_continuous_scale=px.colors.sequential.BuGn,
